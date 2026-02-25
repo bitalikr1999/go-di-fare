@@ -1,8 +1,8 @@
 package pages
 
 import (
-	tasks_service "bitalikrty/difare/app/services/tasks"
-	tasklist "bitalikrty/difare/presentation/components/task-list"
+	tasks_service "bitalikr1999/difare/app/services/tasks"
+	tasklist "bitalikr1999/difare/presentation/components/task-list"
 	"image/color"
 
 	"fyne.io/fyne/v2"

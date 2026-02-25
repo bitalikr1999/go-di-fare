@@ -1,7 +1,7 @@
 package adapter_fyne
 
 import (
-	uilayouts "bitalikrty/difare/presentation/layouts"
+	uilayouts "bitalikr1999/difare/presentation/layouts"
 
 	"fyne.io/fyne/v2"
 )

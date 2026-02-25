@@ -1,7 +1,7 @@
 package uilayouts
 
 import (
-	navmenu "bitalikrty/difare/presentation/components/nav-menu"
+	navmenu "bitalikr1999/difare/presentation/components/nav-menu"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"

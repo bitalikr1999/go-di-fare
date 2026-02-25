@@ -1,14 +1,14 @@
 package bootstrap
 
 import (
-	adapter_fyne "bitalikrty/difare/app/addapters/fyne"
-	"bitalikrty/difare/app/configs/menu"
-	config_router "bitalikrty/difare/app/configs/router"
-	"bitalikrty/difare/app/db"
-	"bitalikrty/difare/app/db/repositories"
-	tasks_service "bitalikrty/difare/app/services/tasks"
-	"bitalikrty/difare/internal/router"
-	uilayouts "bitalikrty/difare/presentation/layouts"
+	adapter_fyne "bitalikr1999/difare/app/addapters/fyne"
+	"bitalikr1999/difare/app/configs/menu"
+	config_router "bitalikr1999/difare/app/configs/router"
+	"bitalikr1999/difare/app/db"
+	"bitalikr1999/difare/app/db/repositories"
+	tasks_service "bitalikr1999/difare/app/services/tasks"
+	"bitalikr1999/difare/internal/router"
+	uilayouts "bitalikr1999/difare/presentation/layouts"
 	"context"
 	"fmt"
 	"time"

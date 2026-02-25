@@ -1,7 +1,7 @@
 package db
 
 import (
-	"bitalikrty/difare/app/db/migrations"
+	"bitalikr1999/difare/app/db/migrations"
 	"context"
 	"database/sql"
 	"fmt"

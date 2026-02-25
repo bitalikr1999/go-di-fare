@@ -1,8 +1,8 @@
 package tasks_service
 
 import (
-	dbentities "bitalikrty/difare/app/db/entities"
-	"bitalikrty/difare/app/db/repositories"
+	dbentities "bitalikr1999/difare/app/db/entities"
+	"bitalikr1999/difare/app/db/repositories"
 	"context"
 	"fmt"
 	"time"

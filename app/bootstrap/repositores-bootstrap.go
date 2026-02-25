@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"bitalikrty/difare/app/db/repositories"
+	"bitalikr1999/difare/app/db/repositories"
 	"database/sql"
 )
 

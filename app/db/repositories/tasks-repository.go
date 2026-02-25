@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	dbentities "bitalikrty/difare/app/db/entities"
+	dbentities "bitalikr1999/difare/app/db/entities"
 	"context"
 	"database/sql"
 	"fmt"

@@ -1,4 +1,4 @@
-module bitalikrty/difare
+module bitalikr1999/difare
 
 go 1.23.3
 

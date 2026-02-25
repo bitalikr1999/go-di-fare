@@ -1,9 +1,9 @@
 package config_router
 
 import (
-	tasks_service "bitalikrty/difare/app/services/tasks"
-	"bitalikrty/difare/internal/router"
-	"bitalikrty/difare/presentation/pages"
+	tasks_service "bitalikr1999/difare/app/services/tasks"
+	"bitalikr1999/difare/internal/router"
+	"bitalikr1999/difare/presentation/pages"
 )
 
 func CreateRouterConfig(

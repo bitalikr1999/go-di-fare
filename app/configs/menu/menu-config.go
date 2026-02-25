@@ -1,8 +1,8 @@
 package menu
 
 import (
-	config_router "bitalikrty/difare/app/configs/router"
-	navmenu "bitalikrty/difare/presentation/components/nav-menu"
+	config_router "bitalikr1999/difare/app/configs/router"
+	navmenu "bitalikr1999/difare/presentation/components/nav-menu"
 )
 
 var NavMenuConfig = []navmenu.Item{
