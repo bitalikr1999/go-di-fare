@@ -7,6 +7,7 @@ import (
 	"bitalikr1999/difare/app/db"
 	"bitalikr1999/difare/app/db/repositories"
 	tasks_service "bitalikr1999/difare/app/services/tasks"
+	eventsbus "bitalikr1999/difare/internal/events-bus"
 	"bitalikr1999/difare/internal/router"
 	uilayouts "bitalikr1999/difare/presentation/layouts"
 	"context"
@@ -18,13 +19,13 @@ import (
 )
 
 type App struct {
-	fyneApp     fyne.App
-	mainWindow  fyne.Window
-	router      router.Router
-	navigateCtr *router.RouterCtr
-
+	fyneApp      fyne.App
+	mainWindow   fyne.Window
+	router       router.Router
+	navigateCtr  *router.RouterCtr
 	repositories *RepositoriesIoc
 	services     *ServicesIoc
+	eventsBus    *eventsbus.EventsBus
 }
 
 func NewApp() *App {
@@ -33,17 +34,16 @@ func NewApp() *App {
 
 func (a *App) Run() {
 
+	a.initEventsBus()
 	a.initDb()
 	a.initServices()
 	a.initWindow()
 	a.initRouter()
 
 	go func() {
-		time.Sleep(10 * time.Second)
+		time.Sleep(1 * time.Second)
 
-		a.repositories.Tasks.Create(context.Background(), repositories.CreateTaskPayload{
-			Title: "New task created dynamical",
-		})
+		a.services.Tasks.Create()
 
 		fmt.Println("Created")
 	}()
@@ -71,7 +71,7 @@ func (a *App) initRouter() {
 	adapter := adapter_fyne.NewFyneRouterAdapter(a.mainWindow, &layout)
 
 	a.router = *router.NewRouter(
-		config_router.CreateRouterConfig(a.services.Tasks),
+		config_router.CreateRouterConfig(a.services.Tasks, a.eventsBus),
 		config_router.Main,
 		adapter,
 		a.navigateCtr,
@@ -101,7 +101,11 @@ func (a *App) initDb() {
 func (a *App) initServices() {
 
 	a.services = &ServicesIoc{
-		Tasks: tasks_service.Create(a.repositories.Tasks),
+		Tasks: tasks_service.Create(a.repositories.Tasks, a.eventsBus),
 	}
 
+}
+
+func (a *App) initEventsBus() {
+	a.eventsBus = eventsbus.New()
 }
